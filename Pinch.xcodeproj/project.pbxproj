@@ -12,6 +12,7 @@
 		30D7F3012AB6D877001C172E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D7F3002AB6D877001C172E /* Assets.xcassets */; };
 		30D7F3042AB6D877001C172E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D7F3032AB6D877001C172E /* Preview Assets.xcassets */; };
 		30D7F30F2AB6E31F001C172E /* InfoPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D7F30E2AB6E31F001C172E /* InfoPanelView.swift */; };
+		30D7F3112AB6EB0B001C172E /* ControlImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D7F3102AB6EB0B001C172E /* ControlImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		30D7F3002AB6D877001C172E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30D7F3032AB6D877001C172E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		30D7F30E2AB6E31F001C172E /* InfoPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPanelView.swift; sourceTree = "<group>"; };
+		30D7F3102AB6EB0B001C172E /* ControlImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				30D7F30E2AB6E31F001C172E /* InfoPanelView.swift */,
+				30D7F3102AB6EB0B001C172E /* ControlImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30D7F3112AB6EB0B001C172E /* ControlImageView.swift in Sources */,
 				30D7F2FF2AB6D876001C172E /* ContentView.swift in Sources */,
 				30D7F2FD2AB6D876001C172E /* PinchApp.swift in Sources */,
 				30D7F30F2AB6E31F001C172E /* InfoPanelView.swift in Sources */,
