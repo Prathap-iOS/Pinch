@@ -15,6 +15,9 @@ struct ContentView: View {
     @State private var imageOffset: CGSize = .zero
     @State private var isDrawerOpen: Bool = false
     
+    let pages: [Page] = pagesData
+    @State private var pageIndex: Int = 1
+    
     // MARK: - FUNCTION
     
     func resetImageState() {
@@ -24,6 +27,10 @@ struct ContentView: View {
         }
     }
     
+    func currentPage() -> String {
+        return pages[pageIndex - 1].imageName
+    }
+    
     // MARK: - CONTENT
     
     var body: some View {
@@ -31,7 +38,7 @@ struct ContentView: View {
             ZStack {
                 Color.clear
                 // MARK: - PAGE IMAGE
-                Image("magazine-front-cover")
+                Image(currentPage())
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(10)
@@ -106,7 +113,6 @@ struct ContentView: View {
                 Group {
                     HStack {
                         // SCLAE DOWN
-                        
                         Button {
                             withAnimation(.spring()) {
                                 if imageScale > 1 {
@@ -122,7 +128,6 @@ struct ContentView: View {
                         }
                         
                         // RESET
-                        
                         Button {
                             resetImageState()
                         } label: {
@@ -130,7 +135,6 @@ struct ContentView: View {
                         }
                         
                         // SCALE UP
-                        
                         Button {
                             withAnimation(.spring()) {
                                 if imageScale < 5 {
@@ -158,7 +162,6 @@ struct ContentView: View {
             .overlay(
                 HStack (spacing: 12) {
                     // MARK: - DRAWER HANDLER
-                    
                     Image(systemName: isDrawerOpen ? "chevron.compact.right" : "chevron.compact.left")
                         .resizable()
                         .scaledToFit()
@@ -172,6 +175,20 @@ struct ContentView: View {
                         })
                     
                     // MARK: -  THUMBNAILS
+                    ForEach(pages) { item in
+                        Image(item.thumbnailName)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 80)
+                            .cornerRadius(8)
+                            .shadow(radius: 4)
+                            .opacity(isDrawerOpen ? 1 : 0)
+                            .animation(.easeOut(duration: 0.5), value: isDrawerOpen)
+                            .onTapGesture(perform: {
+                                isAnimating = true
+                                pageIndex = item.id
+                            })
+                    }
                     Spacer()
                 } //: DRAWER
                     .padding(EdgeInsets(top: 16, leading: 8, bottom: 16, trailing: 8))
